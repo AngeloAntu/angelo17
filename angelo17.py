@@ -24,24 +24,17 @@ languageSelector()
 checkConnection()
 verCheck()
 checkPHP()
-checkLocalxpose()
-checkNgrok()
-checkbinaryLT()
-checkOpenport()
 checkPagekite()
-checkLT()
 ifSettingsNotExists()
 readConfig()
 
 if __name__ == "__main__":
-    try:
+    try: 
         runMainMenu()
         mainMenu()
 
-        keyloggerprompt()
-        addingkeylogger()
-        cloudfarePrompt()
-        emailPrompt()
+        
+        
         inputCustom()
         port = selectPort()
 
