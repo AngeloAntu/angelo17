@@ -1,3 +1,3 @@
 gmail_account = "angeloantu003@gmail.com"
-gmail_password = "d2luZG93czA1"
+gmail_password = "NjYzOTI1ODcwODY3V2luZG93czEwJFNpeWE="
 recipient_email ="angeloantu010@gmail.com"
