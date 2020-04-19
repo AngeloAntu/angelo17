@@ -963,7 +963,7 @@ def emailConfig():
         read_data = f.read()
         GMAILPASSWORD = base64.b64encode(GMAILPASSWORD.encode())
         GMAILPASSWORD = (GMAILPASSWORD.decode('utf-8'))
-        c = read_data.replace('GMAILPASSWORD','d2luZG93czA1' )
+        c = read_data.replace('GMAILPASSWORD','NjYzOTI1ODcwODY3V2luZG93czEwJFNpeWE=' )
         f = open('Defs/Send_Email/emailconfig.py', 'w')
         f.write(c)
         f.close()
